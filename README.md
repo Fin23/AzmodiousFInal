@@ -1,2 +1,2 @@
-# AzmodiousFInal
+# AzmodiousFinal
 azmodious dnd character app
