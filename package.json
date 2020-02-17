@@ -1,0 +1,23 @@
+{
+  "name": "azmodious",
+  "version": "1.0.0",
+  "description": "my dnd character",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fin23/dnd-character.git"
+  },
+  "author": "fin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fin23/dnd-character/issues"
+  },
+  "homepage": "https://github.com/Fin23/dnd-character#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
+}
