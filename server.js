@@ -32,7 +32,7 @@ app.post('/butt', (req, res) => {
 });
 
 
-app.get('/', function(req, res)  {
+app.get('/spells', function(req, res)  {
   res.sendFile(path.join( __dirname + '/assets/index.html'));
   request(`http://www.dnd5eapi.co/api/spells/`, { json: true }, (err, res, body) => {
   if (err) { 
@@ -43,6 +43,17 @@ app.get('/', function(req, res)  {
 for(i in body.results){
   spellSearchTerm = body.results[i];
   console.log(spellSearchTerm.index)
+
+  // var spellJson = JSON.stringify(body.results);
+
+  // fs.writeFile("spellList.json", spellJson, 'utf8', function(err){
+  //   if (err) {
+  //     console.log("An error occured while writing JSON Object to File.");
+  //     return console.log(err);
+  // }
+
+  // console.log("JSON file has been saved.");
+  // });
   // document.getElementById('spellList').innerHTML = spellSearchTerm.index;
 }
 });

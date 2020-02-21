@@ -198,11 +198,11 @@ fetch(`http://www.dnd5eapi.co/api/spells/${spells}`).then(response =>{
 // let spells = "mending";
 
 console.log('========= about to fetch 2 ============')
-fetch(`http://www.dnd5eapi.co/api/spells/`).then(response =>{
+fetch(`http://www.dnd5eapi.co/api/spells/`).then(body, response =>{
 //   console.log('======= response =========');
 //   console.log(response);
   return response.json();
-
+  
   console.log('========== end of response =======');
 })
 .then(jsonData => {
@@ -210,7 +210,7 @@ fetch(`http://www.dnd5eapi.co/api/spells/`).then(response =>{
     var iterator = jsonData.results.values()
     document.getElementById('fetchData2').innerHTML = jsonData.results[12].index;
     
-
+    document.getElementById('spellList').innerHTML = body.result;
    
       
 
@@ -219,7 +219,7 @@ fetch(`http://www.dnd5eapi.co/api/spells/`).then(response =>{
         // console.log(elements.index); 
         
         result.push(elements.index)
-        document.getElementById('spellList').innerHTML = result;
+       
         console.log("=========results===========")
         console.log(result);
 
