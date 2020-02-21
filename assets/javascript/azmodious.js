@@ -1,4 +1,17 @@
-$(document).ready(function(){
+// import { response } from "express";
+
+
+
+
+    const spellB = function() {
+        alert('spell cast', azmodious.name.innerHTML)
+        
+    };
+
+
+
+
+// $(document).ready(function(){
     const azmodious = {
         name: 'Azmodious',
         class: 'Wizard',
@@ -90,6 +103,127 @@ $(document).ready(function(){
 
 
 
+console.log(azmodious.arcana + azmodious.investigation);
+
+
+
+// catchSpell();
+
+// console.log('========= about to fetch async ============')
+// async function catchSpell(){
+//     const spells = "mending";
+//     const response = await fetch(`http://www.dnd5eapi.co/api/spells/${spells}`);
+//     const json = await response.json();
+//     document.getElementById('fetchData').innerHTML = response.index;
+// }
+
+
+
+  
+
+
+
+let spells = "acid-arrow";
+
+
+
+console.log('========= about to fetch============')
+fetch(`http://www.dnd5eapi.co/api/spells/${spells}`).then(response =>{
+ 
+  console.log('======= response =========');
+  console.log(response);
+  return response.json();
+  console.log('========== end of response =======');
+})
+.then(response => {
+    let IndexJ = response.index;
+    let NameJ = response.name;
+    let PageJ = response.page;
+    let LevelJ = response.level
+    let MaterialJ = response.material
+    let CastingTimeJ = response.casting_time;
+    let DurationJ = response.duration;
+    let ConcentrationJ = response.concentration;
+    let RangeJ = response.range;
+    let DescriptionJ = response.desc;
+    let HigherLevelJ = response.higher_level;
+    console.log(response);
+    document.getElementById('fetchData').innerHTML = IndexJ;
+    document.getElementById('fetchData3').innerHTML = PageJ;
+
+    document.getElementById('fetchData4').innerHTML = NameJ;
+    document.getElementById('fetchData5').innerHTML = LevelJ;
+    document.getElementById('fetchData6').innerHTML = MaterialJ;
+    document.getElementById('fetchData7').innerHTML = CastingTimeJ;
+    document.getElementById('fetchData8').innerHTML = DurationJ;
+    document.getElementById('fetchData9').innerHTML = ConcentrationJ;
+    document.getElementById('fetchData10').innerHTML = RangeJ;
+    document.getElementById('fetchData11').innerHTML = DescriptionJ;
+    document.getElementById('fetchData112').innerHTML = HigherLevelJ;
+   
+   
+
+    
+
+    // console.log("Index: ",Index);
+    // console.log("Name: ",Name);
+    // console.log("Page: ",Page);
+    // console.log("Level: ",Level);
+    // console.log("Material Needed: ",Material);
+    // console.log("Casting Time: ",CastingTime);
+    // console.log("Spell Duration: ",Duration);
+    // console.log("Concentration: ",Concentration);
+    // console.log("Spell Range: ",Range);
+    // console.log("Description: ",Description);
+    // console.log("Higher Level Bonus: ",HigherLevel);
+  
+    // console.log("Class: ",body.classes[0].name);
+    // //  request(`http://www.dnd5eapi.co/api/spells/${spells}`).pipe(fs.createWriteStream('test.json'))
+    // for(i in body.classes){
+    //   allClasses = body.classes[i];
+    //   console.log("All Classes: ",allClasses.name)
+    // }
+
+
+
+
+
+
+});
+
+
+
+
+
+// let spells = "mending";
+
+console.log('========= about to fetch 2 ============')
+fetch(`http://www.dnd5eapi.co/api/spells/`).then(response =>{
+//   console.log('======= response =========');
+//   console.log(response);
+  return response.json();
+
+  console.log('========== end of response =======');
+})
+.then(jsonData => {
+    // console.log(jsonData.results);
+    var iterator = jsonData.results.values()
+    document.getElementById('fetchData2').innerHTML = jsonData.results[12].index;
+    
+
+   
+      
+
+    for (let elements of iterator) { 
+        const result = [];
+        // console.log(elements.index); 
+        
+        result.push(elements.index)
+        document.getElementById('spellList').innerHTML = result;
+        console.log("=========results===========")
+        console.log(result);
+
+      } 
 
 
 
@@ -97,24 +231,22 @@ $(document).ready(function(){
 
 
 
+    // console.log(jsonData.results);
+    for(i in jsonData.results){
+        spellSearchTerm = jsonData.results[i];
+      
+        // console.log(spellSearchTerm.index)
+        
+      }
+    
+})
+.catch(error => {
+    console.log('error!');
+    console.error(error);
+});
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-});//end of document ready fn. 
+// });
+//end of document ready fn. 
 
 

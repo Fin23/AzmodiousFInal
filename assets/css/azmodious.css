@@ -9,7 +9,9 @@ body{
     background-size: cover;
 }
 
-
+#spellList{
+    height:100%;
+}
 #azmodious{
     box-shadow: 0 8px 16px 0
     #eb69a7 , 0 6px 20px 0 rgba(243, 6, 6, 0.979);

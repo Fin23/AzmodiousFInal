@@ -18,6 +18,8 @@
   "homepage": "https://github.com/Fin23/dnd-character#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "path": "^0.12.7"
+    "node-fetch": "^2.6.0",
+    "path": "^0.12.7",
+    "request": "^2.88.2"
   }
 }
