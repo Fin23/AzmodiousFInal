@@ -118,7 +118,26 @@ console.log(azmodious.arcana + azmodious.investigation);
 // }
 
 
+const spellForm = document.getElementById('spellForm');
 
+spellForm.addEventListener('submit', function (e){
+    e.preventDefault();
+
+
+    const spellFormData = new spellFormData(this);
+
+    fetch(`http://www.dnd5eapi.co/api/spells/${spells}`, {
+        method: 'post',
+        body: spellFormData
+    }).then(function(response){
+        return response.text();
+    }).then(function(text){
+        console.log(text);
+    }).catch(function(error){
+        console.log(error)
+    })
+
+});
   
 
 
@@ -133,7 +152,7 @@ fetch(`http://www.dnd5eapi.co/api/spells/${spells}`).then(response =>{
   console.log('======= response =========');
   console.log(response);
   return response.json();
-  console.log('========== end of response =======');
+
 })
 .then(response => {
     let IndexJ = response.index;
@@ -197,48 +216,28 @@ fetch(`http://www.dnd5eapi.co/api/spells/${spells}`).then(response =>{
 
 // let spells = "mending";
 
-console.log('========= about to fetch 2 ============')
-fetch(`http://www.dnd5eapi.co/api/spells/`).then(body, response =>{
-//   console.log('======= response =========');
-//   console.log(response);
-  return response.json();
+fetch(`http://www.dnd5eapi.co/api/spells/`).then( response =>{
+    console.log('======= response 2 =========');
+    console.log(response);
+    return response.json();
   
-  console.log('========== end of response =======');
+
 })
-.then(jsonData => {
-    // console.log(jsonData.results);
-    var iterator = jsonData.results.values()
-    document.getElementById('fetchData2').innerHTML = jsonData.results[12].index;
-    
-    document.getElementById('spellList').innerHTML = body.result;
-   
-      
-
-    for (let elements of iterator) { 
-        const result = [];
-        // console.log(elements.index); 
-        
-        result.push(elements.index)
-       
-        console.log("=========results===========")
-        console.log(result);
-
-      } 
+.then(response => {
+    spells = response.results;
 
 
+    // spells = JSON.stringify(spells);
+    // spells = JSON.parse(spells);
+    console.log(spells);
+    var spellOutPut = '';
+    for(var i = 0; i < spells.length;i++){
+console.log(spells[i].index);
 
-
-
-
-
-    // console.log(jsonData.results);
-    for(i in jsonData.results){
-        spellSearchTerm = jsonData.results[i];
-      
-        // console.log(spellSearchTerm.index)
-        
-      }
-    
+spellOutPut += '<li>'+spells[i].index+'</li>';
+    }
+   document.getElementById('spellList').innerHTML = spellOutPut;
+ 
 })
 .catch(error => {
     console.log('error!');

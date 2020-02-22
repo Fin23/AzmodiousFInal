@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="css/azmodious.css" />
     <link rel="stylesheet" type="text/css" href="css/grid.css" />
 
-    <title>Azmodious</title>
+    <title>Azmodious </title>
   </head>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -68,9 +68,9 @@
   <header>
 
 
-   
+   <h1>AZMODIOUS the Sage</h1>
   </header>
-  <div id="spellList"></div>
+
 
   <body background="img/background.jpg">
     <!-- <img src="img/background.jpg" alt="Photograph of a chocolate cupcake."> -->
@@ -144,30 +144,39 @@
           alt="Card image cap"
         />
         <div class="card-body">
-          <h5 class="card-title"> Name:_Azmodious</h5>
+          <!-- <h5 class="card-title"> Name:_Azmodious</h5> -->
           <p class="card-text">
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><span id="class">class:_____</span></li>
+            <li class="list-group-item"><span id="level">level:______</span></li>
+            <li class="list-group-item"><span id="race">race:_____</span></li>
+            <li class="list-group-item">
+              <span id="alignment"> alignment:_____</span>
+            </li>
+            <li class="list-group-item"><span>current experience:_____</span></li>
+            <li class="list-group-item">
+              <span>experience for next level:_____</span>
+            </li>
+          </ul>
+          <br>
+          <form class="form" id="spellForm">
+            <input type="text" id="spellInput">
+            <button type="submit" id="spellSubmit"> find spell </button>
+          </form>
+          <br>
+          <button onclick="spellB()"> cast spell</button>
+          <div class="card-body">
+          
+            <a href="#" id="spell-book" class="card-link">Spell Book</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><span id="class">class:_____</span></li>
-          <li class="list-group-item"><span id="level">level:______</span></li>
-          <li class="list-group-item"><span id="race">race:_____</span></li>
-          <li class="list-group-item">
-            <span id="alignment"> alignment:_____</span>
-          </li>
-          <li class="list-group-item"><span>current experience:_____</span></li>
-          <li class="list-group-item">
-            <span>experience for next level:_____</span>
-          </li>
-        </ul>
-        <button onclick="spellB()"> cast spell</button>
-        <div class="card-body">
-        
-          <a href="#" id="spell-book" class="card-link">Spell Book</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
+      
       </div>
   
       <!-- <div class="card">
@@ -335,7 +344,7 @@
     
       <!--====================================================================================-->
  
-
+      <div id="spellList"></div>
       <!--====================================================================================-->
   
     
