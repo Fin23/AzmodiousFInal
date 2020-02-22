@@ -118,27 +118,28 @@ console.log(azmodious.arcana + azmodious.investigation);
 // }
 
 
-const spellForm = document.getElementById('spellForm');
 
+const spellForm = document.getElementById('spellForm');
 spellForm.addEventListener('submit', function (e){
     e.preventDefault();
 
-
-    const spellFormData = new spellFormData(this);
-
-    fetch(`http://www.dnd5eapi.co/api/spells/${spells}`, {
-        method: 'post',
-        body: spellFormData
-    }).then(function(response){
-        return response.text();
-    }).then(function(text){
-        console.log(text);
-    }).catch(function(error){
-        console.log(error)
-    })
+    console.log(JSON.stringify(spellForm.value)); 
+    // const spellFormData = new spellFormData(this);
+    // fetch(`http://www.dnd5eapi.co/api/spells/${spells}`, {
+    //     method: 'post',
+    //     body: spellFormData
+    // }).then(function(response){
+    //     return response.text();
+    // }).then(function(text){
+    //     console.log(text);
+    // }).catch(function(error){
+    //     console.log(error)
+    // })
 
 });
   
+
+
 
 
 
