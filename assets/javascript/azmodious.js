@@ -103,59 +103,28 @@
 
 
 
-console.log(azmodious.arcana + azmodious.investigation);
+// console.log(azmodious.arcana + azmodious.investigation);
 
 
 
-// catchSpell();
-
-// console.log('========= about to fetch async ============')
-// async function catchSpell(){
-//     const spells = "mending";
-//     const response = await fetch(`http://www.dnd5eapi.co/api/spells/${spells}`);
-//     const json = await response.json();
-//     document.getElementById('fetchData').innerHTML = response.index;
-// }
-
-
-
-const spellForm = document.getElementById('spellForm');
-spellForm.addEventListener('submit', function (e){
-    e.preventDefault();
-
-    console.log(JSON.stringify(spellForm.value)); 
-    // const spellFormData = new spellFormData(this);
-    // fetch(`http://www.dnd5eapi.co/api/spells/${spells}`, {
-    //     method: 'post',
-    //     body: spellFormData
-    // }).then(function(response){
-    //     return response.text();
-    // }).then(function(text){
-    //     console.log(text);
-    // }).catch(function(error){
-    //     console.log(error)
-    // })
-
-});
+document.getElementById('spellInput').addEventListener('input', function() {
   
 
+   
+        console.log( this.value);
+
+let spells = this.value;
 
 
 
-
-let spells = "acid-arrow";
-
-
-
-console.log('========= about to fetch============')
+console.log('========= fetch spell input ============')
 fetch(`http://www.dnd5eapi.co/api/spells/${spells}`).then(response =>{
  
   console.log('======= response =========');
   console.log(response);
   return response.json();
 
-})
-.then(response => {
+}).then(response => {
     let IndexJ = response.index;
     let NameJ = response.name;
     let PageJ = response.page;
@@ -179,57 +148,22 @@ fetch(`http://www.dnd5eapi.co/api/spells/${spells}`).then(response =>{
     document.getElementById('fetchData9').innerHTML = ConcentrationJ;
     document.getElementById('fetchData10').innerHTML = RangeJ;
     document.getElementById('fetchData11').innerHTML = DescriptionJ;
-    document.getElementById('fetchData112').innerHTML = HigherLevelJ;
+    document.getElementById('fetchData12').innerHTML = HigherLevelJ;
    
    
-
-    
-
-    // console.log("Index: ",Index);
-    // console.log("Name: ",Name);
-    // console.log("Page: ",Page);
-    // console.log("Level: ",Level);
-    // console.log("Material Needed: ",Material);
-    // console.log("Casting Time: ",CastingTime);
-    // console.log("Spell Duration: ",Duration);
-    // console.log("Concentration: ",Concentration);
-    // console.log("Spell Range: ",Range);
-    // console.log("Description: ",Description);
-    // console.log("Higher Level Bonus: ",HigherLevel);
-  
-    // console.log("Class: ",body.classes[0].name);
-    // //  request(`http://www.dnd5eapi.co/api/spells/${spells}`).pipe(fs.createWriteStream('test.json'))
-    // for(i in body.classes){
-    //   allClasses = body.classes[i];
-    //   console.log("All Classes: ",allClasses.name)
-    // }
-
-
-
-
-
-
+});
 });
 
-
-
-
-
-// let spells = "mending";
 
 fetch(`http://www.dnd5eapi.co/api/spells/`).then( response =>{
     console.log('======= response 2 =========');
     console.log(response);
     return response.json();
   
-
 })
 .then(response => {
     spells = response.results;
 
-
-    // spells = JSON.stringify(spells);
-    // spells = JSON.parse(spells);
     console.log(spells);
     var spellOutPut = '';
     for(var i = 0; i < spells.length;i++){
@@ -246,7 +180,6 @@ spellOutPut += '<li>'+spells[i].index+'</li>';
 });
 
 
-// });
-//end of document ready fn. 
+
 
 
