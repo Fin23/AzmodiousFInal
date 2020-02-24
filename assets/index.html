@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="css/azmodious.css" />
     <link rel="stylesheet" type="text/css" href="css/grid.css" />
 
-    <title>Azmodious </title>
+    <title>Azmodious</title>
   </head>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -66,11 +66,8 @@
   </nav>
 
   <header>
-
-
-   <h1>AZMODIOUS the Sage</h1>
+    <h1>AZMODIOUS the Sage</h1>
   </header>
-
 
   <body background="img/background.jpg">
     <!-- <img src="img/background.jpg" alt="Photograph of a chocolate cupcake."> -->
@@ -78,8 +75,6 @@
     <div class="card-deck">
       <!--====================================================================================-->
 
-
-      
       <!--====================================================================================-->
       <div class="card" style="width: 25rem;">
         <!-- <img class="card-img-top" src="#" alt="Card image cap" /> -->
@@ -127,16 +122,10 @@
             </span>
           </li>
         </ul>
-        <div class="card-body">
-
-        </div>
-
-
-
-
+        <div class="card-body"></div>
       </div>
 
-    <!--====================================================================================-->
+      <!--====================================================================================-->
       <div class="card" style="width: 25rem;">
         <img
           class="card-img-top"
@@ -152,220 +141,241 @@
 
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><span id="class">class:_____</span></li>
-            <li class="list-group-item"><span id="level">level:______</span></li>
+            <li class="list-group-item">
+              <span id="level">level:______</span>
+            </li>
             <li class="list-group-item"><span id="race">race:_____</span></li>
             <li class="list-group-item">
               <span id="alignment"> alignment:_____</span>
             </li>
-            <li class="list-group-item"><span>current experience:_____</span></li>
+            <li class="list-group-item">
+              <span>current experience:_____</span>
+            </li>
             <li class="list-group-item">
               <span>experience for next level:_____</span>
             </li>
           </ul>
-          <br>
+          <br />
 
-
-
- <form class="form" id="spellForm">
-            <input type="text" id="spellInput">
-            <input type="submit" id="spellSubmit"> 
+          <form class="form" id="spellForm">
+            <input type="text" id="spellInput" />
+            <input type="submit" id="spellSubmit" />
           </form>
-          <br> 
+          <br />
 
-<!-- 
-          <form id="myForm">
-            Spell name: <input type="text" name="fname"><br>
-            < Last name: <input type="text" name="lname"><br><br>
-            <input type="button" onclick="myFunction()" value="Submit form">
-          </form> -->
+          <!-- <button onclick="spellB()">cast spell</button> -->
 
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#exampleModalLong"
+          >
+            cast spell
+          </button>
 
-          <button onclick="spellB()"> cast spell</button>
           <div class="card-body">
-          
             <a href="#" id="spell-book" class="card-link">Spell Book</a>
             <a href="#" class="card-link">Another link</a>
           </div>
-
         </div>
-      
       </div>
-  
-      <!-- <div class="card">
-        <img class="card-img-top" src="..." alt="Card image cap" />
+
+      <div class="card">
+        <!-- <img class="card-img-top" src="..." alt="Card image cap" /> -->
         <div class="card-body">
+          <h5 class="card-title">
+            <span id="Str">
+              Strength:_____
+            </span>
+          </h5>
 
+          <p class="card-text">
+            <span id="athletics">
+              athletics
+            </span>
+          </p>
 
+          <h5 class="card-title">
+            <span id="Dex">
+              Dexterity:_____
+            </span>
+          </h5>
 
-       
+          <p class="card-text">
+            <span id="acrobatics">
+              acrobatics
+            </span>
+            <br />
+            <span id="sleight-of-hand">
+              sleight of hand
+            </span>
+            <br />
+            <span id="stealth">
+              stealth
+            </span>
+          </p>
+
+          <h5 class="card-title">
+            <span id="Int">
+              Intelligence:_____
+            </span>
+          </h5>
+
+          <p class="card-text">
+            <span id="arcana">
+              arcana
+            </span>
+            <br />
+            <span id="history">
+              history
+            </span>
+            <br />
+            <span id="investigation">
+              investigation
+            </span>
+            <br />
+            <span id="nature">
+              nature
+            </span>
+            <br />
+            <span id="religion">
+              religion
+            </span>
+          </p>
+
+          <h5 class="card-title">
+            <span id="Cha">
+              Charisma:_____
+            </span>
+          </h5>
+
+          <p class="card-text">
+            <span id="deception">
+              deception
+            </span>
+            <br />
+            <span id="intimidation">
+              intimidation
+            </span>
+            <br />
+            <span id="performance">
+              performance
+            </span>
+            <br />
+            <span id="persuasion">
+              persuasion
+            </span>
+          </p>
+
+          <h5 class="card-title">
+            <span id="Wis">
+              Wisdom:_____
+            </span>
+          </h5>
+
+          <p class="card-text">
+            <span id="insight">
+              insight
+            </span>
+            <br />
+            <span id="medicine">
+              medicine
+            </span>
+            <br />
+            <span id="perception">
+              perception
+            </span>
+            <br />
+            <span id="survival">
+              survival
+            </span>
+          </p>
+
+          <h5 class="card-title">
+            <span id="Con">
+              Constitution:_____
+            </span>
+          </h5>
+          <div>===== spell search =====</div>
+          <p>from whole list: <span id="fetchData2"></span></p>
+
+          <p>Index: <span id="fetchData"></span></p>
+
+          <p>Page: <span id="fetchData3"></span></p>
+
+          <p>Name: <span id="fetchData4"></span></p>
+          <p>Level: <span id="fetchData5"></span></p>
+          <p>Material Needed: <span id="fetchData6"></span></p>
+          <p>Casting Time: <span id="fetchData7"></span></p>
+          <p>Duration: <span id="fetchData8"></span></p>
+          <p>Concentration: <span id="fetchData9"></span></p>
+          <p>Spell Range : <span id="fetchData10"></span></p>
+          <p>Spell Summary: <span id="fetchData11"></span></p>
+          <p>Higher Level: <span id="fetchData12"></span></p>
         </div>
         <div class="card-footer">
           <small class="text-muted">Last updated 3 mins ago</small>
         </div>
-      </div> -->
-
-    <div class="card">
-      <!-- <img class="card-img-top" src="..." alt="Card image cap" /> -->
-      <div class="card-body">
-        <h5 class="card-title">
-          <span id="Str">
-            Strength:_____
-          </span>
-        </h5>
-
-        <p class="card-text">
-          <span id="athletics">
-            athletics
-          </span>
-        </p>
-
-        <h5 class="card-title">
-          <span id="Dex">
-            Dexterity:_____
-          </span>
-        </h5>
-
-        <p class="card-text">
-          <span id="acrobatics">
-            acrobatics
-          </span>
-<br>
-          <span id="sleight-of-hand">
-            sleight of hand
-          </span>
-          <br>
-          <span id="stealth">
-            stealth
-          </span>
-        </p>
-
-        <h5 class="card-title">
-          <span id="Int">
-            Intelligence:_____
-          </span>
-        </h5>
-
-        <p class="card-text">
-          <span id="arcana">
-            arcana
-          </span>
-<br>
-          <span id="history">
-            history
-          </span>
-          <br>
-          <span id="investigation">
-            investigation
-          </span>
-          <br>
-          <span id="nature">
-            nature
-          </span>
-          <br>
-          <span id="religion">
-            religion
-          </span>
-        </p>
-
-
-        <h5 class="card-title">
-          <span id="Cha">
-            Charisma:_____
-          </span>
-        </h5>
-
-        <p class="card-text">
-          <span id="deception">
-            deception
-          </span>
-<br>
-          <span id="intimidation">
-            intimidation
-          </span>
-          <br>
-          <span id="performance">
-            performance
-          </span>
-          <br>
-          <span id="persuasion">
-            persuasion
-          </span>
-        </p>
-
-        <h5 class="card-title">
-          <span id="Wis">
-            Wisdom:_____
-          </span>
-        </h5>
-
-        <p class="card-text">
-          <span id="insight">
-            insight
-          </span>
-          <br>
-          <span id="medicine">
-            medicine
-          </span>
-          <br>
-          <span id="perception">
-            perception
-          </span>
-          <br>
-          <span id="survival">
-            survival
-          </span>
-        </p>
-
-        <h5 class="card-title">
-          <span id="Con">
-            Constitution:_____
-          </span>
-        </h5>
-        <div>===== spell search =====</div>
-        <p> from whole list: <span id="fetchData2"></span></p>
-
-        <p>Index: <span id="fetchData"></span></p>
-       
-        <p>Page: <span id="fetchData3"></span></p>
-
-        <p>Name: <span id="fetchData4"></span></p>
-        <p>Level: <span id="fetchData5"></span></p>
-        <p>Material Needed: <span id="fetchData6"></span></p>
-        <p>Casting Time: <span id="fetchData7"></span></p>
-        <p>Duration: <span id="fetchData8"></span></p>
-        <p>Concentration: <span id="fetchData9"></span></p>
-        <p>Spell Range : <span id="fetchData10"></span></p>
-        <p>Spell Summary: <span id="fetchData11"></span></p>
-        <p>Higher Level: <span id="fetchData12"></span></p>
       </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
+
+      <!--====================================================================================-->
+
+      <!--====================================================================================-->
+      <div class="card-deck">
+        <!--====================================================================================-->
+
+        <!--====================================================================================-->
+
+        <!--====================================================================================-->
+
+        <!--====================================================================================-->
+
+        <!--====================================================================================-->
       </div>
     </div>
 
-    <!--====================================================================================-->
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModalLong"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLongTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <span id="spellList"></span>
 
-
-
-
-
-
-    
-    <!--====================================================================================-->
-    <div class="card-deck">
-      <!--====================================================================================-->
-    
-      <!--====================================================================================-->
- 
-      <div id="spellList"></div>
-      <!--====================================================================================-->
-  
-    
-      <!--====================================================================================-->
- 
-      <!--====================================================================================-->
+            ...
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
     </div>
-
 
     <!--====================================================================================-->
     <script
