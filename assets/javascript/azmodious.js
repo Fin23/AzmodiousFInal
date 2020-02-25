@@ -7,9 +7,32 @@ const spellB = function() {
 // $(document).ready(function(){
 const azmodious = {
   name: "Azmodious",
-  class: "Wizard",
+  class: [
+    "Barbarian",
+    "Bard",
+    "Cleric",
+    "Druid",
+    "Fighter",
+    "Monk",
+    "Paladin",
+    "Ranger",
+    "Rogue",
+    "Sorcerer",
+    "Warlock",
+    "Wizard"
+  ],
   level: 6,
-  race: "Human",
+  race: [
+    "Dwarf",
+    "Elf",
+    "Halfling",
+    "Human",
+    "Dragonborn",
+    "Gnome",
+    "Half-Elf",
+    "Half-Orc",
+    "Tiefling"
+  ],
   alignment: "chaotic good",
   currentExperience: 1000,
   experienceNeededForNextLevel: 2000,
@@ -57,13 +80,13 @@ const azmodious = {
 
 let Class = (document.getElementById(
   "class"
-).innerHTML = `Class: ${azmodious.class}`);
+).innerHTML = `Class: ${azmodious.class[11]}`);
 let Level = (document.getElementById(
   "level"
 ).innerHTML = `Level: ${azmodious.level}`);
 let Race = (document.getElementById(
   "race"
-).innerHTML = `Race: ${azmodious.race}`);
+).innerHTML = `Race: ${azmodious.race[3]}`);
 let Alignment = (document.getElementById(
   "alignment"
 ).innerHTML = `Alignment: ${azmodious.alignment}`);
@@ -165,22 +188,16 @@ let ProficiencyBonus = (document.getElementById(
 
 // console.log(azmodious.arcana + azmodious.investigation);
 
-
-
 // document.getElementById("spellInput").addEventListener("input", function()   .addEventListener
 
-
 //  function spellSearch(){
-  
 
-    document.getElementById("spellInput").addEventListener("input", function(){
-//  document.getElementById("spellInput");
-    
+document.getElementById("spellInput").addEventListener("input", function() {
+  //  document.getElementById("spellInput");
 
-    // event.preventDefault();
+  // event.preventDefault();
 
- 
-    console.log(this.value);
+  console.log(this.value);
 
   let spells = this.value;
 
@@ -217,117 +234,84 @@ let ProficiencyBonus = (document.getElementById(
       document.getElementById("fetchData11").innerHTML = DescriptionJ;
       document.getElementById("fetchData12").innerHTML = HigherLevelJ;
     });
-
- 
-   
-})
-
+});
 
 // event.preventDefault();
 // };
- 
-
-
-
-
-
-
-
-
-
-
 
 fetch(`http://www.dnd5eapi.co/api/spells/`)
   .then(response => {
-    console.log("======= response 2 =========");
-    console.log(response);
+    // console.log("======= response 2 =========");
+    // console.log(response);
     return response.json();
   })
   .then(response => {
     spells = response.results;
 
-    console.log(spells);
+    // console.log(spells);
     var spellOutPut = "";
     for (var i = 0; i < spells.length; i++) {
-      console.log(spells[i].index);
+      // console.log(spells[i].index);
 
-      spellOutPut += "<button class='pickedSpell' data-dismiss='modal'>" + spells[i].index + "</button>" ;
+      spellOutPut +=
+        "<button class='pickedSpell' data-dismiss='modal'>" +
+        spells[i].index +
+        "</button>";
     }
     document.getElementById("spellList").innerHTML = spellOutPut;
 
-    $(".pickedSpell").click(function(){
+    $(".pickedSpell").click(function() {
+      var id = $(this).text();
+      console.log(id);
+      var spellInput = document.getElementById("spellInput");
 
-var id = $(this).text();
-console.log(id);
-var spellInput = document.getElementById("spellInput");
+      spellInput.value = id;
 
-spellInput.value = id;
+      let spells = id;
 
-let spells = id;
+      console.log("========= fetch spell input ============");
+      fetch(`http://www.dnd5eapi.co/api/spells/${spells}`)
+        .then(response => {
+          // console.log("======= response =========");
+          // console.log(response);
+          return response.json();
+        })
+        .then(response => {
+          let IndexJ = response.index;
+          let NameJ = response.name;
+          let PageJ = response.page;
+          let LevelJ = response.level;
+          let MaterialJ = response.material;
+          let CastingTimeJ = response.casting_time;
+          let DurationJ = response.duration;
+          let ConcentrationJ = response.concentration;
+          let RangeJ = response.range;
+          let DescriptionJ = response.desc;
+          let HigherLevelJ = response.higher_level;
+          // console.log(response);
+          document.getElementById("fetchData").innerHTML = IndexJ;
+          document.getElementById("fetchData3").innerHTML = PageJ;
 
-  console.log("========= fetch spell input ============");
-  fetch(`http://www.dnd5eapi.co/api/spells/${spells}`)
-    .then(response => {
-      console.log("======= response =========");
-      console.log(response);
-      return response.json();
-    })
-    .then(response => {
-      let IndexJ = response.index;
-      let NameJ = response.name;
-      let PageJ = response.page;
-      let LevelJ = response.level;
-      let MaterialJ = response.material;
-      let CastingTimeJ = response.casting_time;
-      let DurationJ = response.duration;
-      let ConcentrationJ = response.concentration;
-      let RangeJ = response.range;
-      let DescriptionJ = response.desc;
-      let HigherLevelJ = response.higher_level;
-      console.log(response);
-      document.getElementById("fetchData").innerHTML = IndexJ;
-      document.getElementById("fetchData3").innerHTML = PageJ;
+          document.getElementById("fetchData4").innerHTML = NameJ;
+          document.getElementById("fetchData5").innerHTML = LevelJ;
+          document.getElementById("fetchData6").innerHTML = MaterialJ;
+          document.getElementById("fetchData7").innerHTML = CastingTimeJ;
+          document.getElementById("fetchData8").innerHTML = DurationJ;
+          document.getElementById("fetchData9").innerHTML = ConcentrationJ;
+          document.getElementById("fetchData10").innerHTML = RangeJ;
+          document.getElementById("fetchData11").innerHTML = DescriptionJ;
+          document.getElementById("fetchData12").innerHTML = HigherLevelJ;
+        });
 
-      document.getElementById("fetchData4").innerHTML = NameJ;
-      document.getElementById("fetchData5").innerHTML = LevelJ;
-      document.getElementById("fetchData6").innerHTML = MaterialJ;
-      document.getElementById("fetchData7").innerHTML = CastingTimeJ;
-      document.getElementById("fetchData8").innerHTML = DurationJ;
-      document.getElementById("fetchData9").innerHTML = ConcentrationJ;
-      document.getElementById("fetchData10").innerHTML = RangeJ;
-      document.getElementById("fetchData11").innerHTML = DescriptionJ;
-      document.getElementById("fetchData12").innerHTML = HigherLevelJ;
+      // console.log("Text: " + $(".pickedSpell").text());
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // console.log("Text: " + $(".pickedSpell").text());
-      });
-    
-
   })
   .catch(error => {
     console.log("error!");
     console.error(error);
   });
 
+// ======================================= test
 
-// ======================================= test 
-
-  
-  $(document).ready(function(){
- 
-  });
-// ======================================= end test 
-
+$(document).ready(function() {});
+// ======================================= end test

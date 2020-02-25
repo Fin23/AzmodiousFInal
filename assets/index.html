@@ -14,9 +14,10 @@
     <link rel="stylesheet" type="text/css" href="css/azmodious.css" />
     <link rel="stylesheet" type="text/css" href="css/grid.css" />
 
-    <title>Azmodious</title>
+    <title>The Vagabond's Almanac :for DND</title>
   </head>
 
+  <!-- ======================================== nav ===================================== -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Navbar</a>
     <button
@@ -41,7 +42,7 @@
           <a class="nav-link" href="./html/reSpec.html">Re-Spec</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="html/bag.html">Bag of items</a>
+          <a class="nav-link" href="./html/bag.html">Bag of items</a>
         </li>
         <li class="nav-item dropdown">
           <a
@@ -53,10 +54,12 @@
             aria-haspopup="true"
             aria-expanded="false"
           >
-            Dropdown link
+            Dungeon Master Building Blocks
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="./html/dungeonMaster.html"
+              >Dungeon Master
+            </a>
             <a class="dropdown-item" href="#">Another action</a>
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
@@ -64,7 +67,7 @@
       </ul>
     </div>
   </nav>
-
+  <!-- ======================================== end nav ===================================== -->
   <header>
     <h1>AZMODIOUS the Sage</h1>
   </header>
@@ -77,14 +80,6 @@
 
       <!--====================================================================================-->
       <div class="card" style="width: 25rem;">
-        <!-- <img class="card-img-top" src="#" alt="Card image cap" /> -->
-        <!-- <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-        </div> -->
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><span id="AC">armor class</span></li>
           <li class="list-group-item">
@@ -133,7 +128,6 @@
           alt="Card image cap"
         />
         <div class="card-body">
-          <!-- <h5 class="card-title"> Name:_Azmodious</h5> -->
           <p class="card-text">
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
@@ -156,18 +150,11 @@
             </li>
           </ul>
           <br />
-
-
-
-
+          <h3>Spell Finder</h3>
           <form class="form" id="spellForm">
-            <input type="text" id="spellInput" />
+            <input type="text" id="spellInput" placeholder="spell-name" />
             <!-- <input type="submit" id="spellSubmit" onclick="spellSearch()" /> -->
           </form>
-
-
-
-
 
           <br />
 
@@ -308,11 +295,8 @@
           </h5>
           <div>===== spell search =====</div>
           <p>from whole list: <span id="fetchData2"></span></p>
-
           <p>Index: <span id="fetchData"></span></p>
-
           <p>Page: <span id="fetchData3"></span></p>
-
           <p>Name: <span id="fetchData4"></span></p>
           <p>Level: <span id="fetchData5"></span></p>
           <p>Material Needed: <span id="fetchData6"></span></p>
@@ -367,8 +351,6 @@
             </button>
           </div>
           <div class="modal-body">
-
-
             <li id="spellList"></li>
 
             ...
@@ -406,13 +388,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="/javascript/azmodious.js"></script>
-    <!-- <script src="server.js"></script> -->
-
-    <!-- <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-   -->
   </body>
 </html>
