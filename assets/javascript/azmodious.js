@@ -236,8 +236,7 @@ document.getElementById("spellInput").addEventListener("input", function() {
     });
 });
 
-// event.preventDefault();
-// };
+
 
 fetch(`http://www.dnd5eapi.co/api/spells/`)
   .then(response => {

@@ -4,14 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+
+    <link rel="stylesheet" type="text/css" href="css/azmodious.css" />
+    <link rel="stylesheet" type="text/css" href="css/grid.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" type="text/css" href="css/azmodious.css" />
-    <link rel="stylesheet" type="text/css" href="css/grid.css" />
+      crossorigin="anonymous"/>
+  
+
+    <link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
 
     <title>bag</title>
   </head>
@@ -72,6 +75,25 @@
       bag
     </h1>
 
+    <table id="table_id" class="display">
+        <thead>
+            <tr>
+                <th>Spells </th>
+                <th>Items</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Row 1 Data 1</td>
+                <td>Row 1 Data 2</td>
+            </tr>
+            <tr>
+                <td>Row 2 Data 1</td>
+                <td>Row 2 Data 2</td>
+            </tr>
+        </tbody>
+    </table>
+
     <button class="increase" id="increase1">increase</button>
     <button class="decrease" id="decrease1">increase</button>
 
@@ -94,5 +116,8 @@
       crossorigin="anonymous"
     ></script>
     <script src="../javascript/azmodious.js"></script>
+    <script src="../javascript/bag.js.js"></script>
+    <script type="text/javascript" charset="utf8" src="/DataTables/datatables.js"></script>
+
   </body>
 </html>
