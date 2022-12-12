@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/Fin23/dnd-character#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mongodb": "^3.5.4",
     "mongoose": "^5.9.2",
     "node-fetch": "^2.6.0",
